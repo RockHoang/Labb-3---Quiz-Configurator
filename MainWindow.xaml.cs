@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Labb_3___Quiz_Configurator.ViewModels;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,7 @@ namespace Labb_3___Quiz_Configurator
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
         }
     }
 }
