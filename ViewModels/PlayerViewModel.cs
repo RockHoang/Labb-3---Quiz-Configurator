@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Labb_3___Quiz_Configurator.ViewModels
 {
-    class PlayerViewModel
+    class PlayerViewModel : ViewModelBase
     {
         private readonly MainWindowViewModel? _mainWindowViewModel;
 

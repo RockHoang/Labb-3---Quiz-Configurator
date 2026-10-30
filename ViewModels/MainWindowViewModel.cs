@@ -20,7 +20,13 @@ namespace Labb_3___Quiz_Configurator.ViewModels
         public QuestionPackViewModel ActivePack 
         { 
             get => _activePack;
-            set => SetProperty(ref _activePack, value);
+            set {
+                if (SetProperty(ref _activePack, value)) {
+                    ConfigurationViewModel?.RaiseActivePackChanged();
+                }
+            
+            } 
+            
               
         }
 
@@ -32,7 +38,8 @@ namespace Labb_3___Quiz_Configurator.ViewModels
             var questionPack = new Models.QuestionPack("Mina frågor");
             questionPack.Questions.Add(new Question("Vad heter Sveriges huvudstad?", "Stockholm", "Oslo", "Berlin", "Paris"));
             questionPack.Questions.Add(new Question("Vad är 2+2?", "4", "8", "16", "32"));
-            ActivePack = new QuestionPackViewModel(new Models.QuestionPack("Mina frågor"));
+            ActivePack = new QuestionPackViewModel(questionPack);
+           
         }
     }
 }

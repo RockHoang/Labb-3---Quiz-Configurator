@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Labb_3___Quiz_Configurator.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,5 +24,6 @@ namespace Labb_3___Quiz_Configurator.Views
         {
             InitializeComponent();
         }
+
     }
 }
