@@ -10,22 +10,24 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        
+
         <WrapPanel HorizontalAlignment="Left" Grid.Row="0">
             <Button Content="Config"/>
             <Button Content="+"/>
             <Button Content="-"/>
         </WrapPanel>
 
-        
-        <DockPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+
+        <DockPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Row="0">
             <ListBox x:Name="QList" 
                      ItemsSource="{Binding ActivePack.Questions}" 
                      SelectedItem="{Binding SelectedQuestion}">
@@ -37,7 +39,7 @@
             </ListBox>
         </DockPanel>
 
-        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2">
+        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0">
             <StackPanel>         
             <Label Content="Question"/>
                 <TextBox x:Name="Qbox" Height="100" Text="{Binding Path = SelectedItem.Query, ElementName=QList }"/>
