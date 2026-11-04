@@ -9,20 +9,21 @@
              DataContext="{Binding Path = ConfigurationViewModel}"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <WrapPanel HorizontalAlignment="Left">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        
+        <WrapPanel HorizontalAlignment="Left" Grid.Row="0">
             <Button Content="Config"/>
             <Button Content="+"/>
             <Button Content="-"/>
         </WrapPanel>
-        
-        <StackPanel HorizontalAlignment="Right">
-            <TextBox></TextBox>
-            <Button 
-            Content="{Binding ActivePack.Name}"
-            Command="{Binding Path=ChangePackNameCommand}"
-            Height="50" Width="100" 
-            />
-        </StackPanel>
+
         
         <DockPanel HorizontalAlignment="Left" VerticalAlignment="Center">
             <ListBox x:Name="QList" 
@@ -36,9 +37,9 @@
             </ListBox>
         </DockPanel>
 
-        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel>
-                <Label Content="Question"/>
+        <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2">
+            <StackPanel>         
+            <Label Content="Question"/>
                 <TextBox x:Name="Qbox" Height="100" Text="{Binding Path = SelectedItem.Query, ElementName=QList }"/>
             <Label Content="Correct Answer"/>
                 <TextBox x:Name="CorrectBox" Text="{Binding Path = SelectedItem.CorrectAnswer, ElementName=QList}"/>
