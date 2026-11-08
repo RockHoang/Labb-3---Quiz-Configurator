@@ -8,14 +8,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="BoolToVisibility"/>
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         
         <views:MenuView Grid.Row="0" />
-        <!--<views:PlayerView Grid.Row="1" />-->
-        <views:ConfigurationView Grid.Row="1"/>
+        <Grid Grid.Row="1" Visibility="{Binding IsPlayViewVisible, Converter={StaticResource BoolToVisibility}}">
+            <views:PlayerView/>
+        </Grid>
+        <Grid Grid.Row="1" Visibility="{Binding IsConfigViewVisible, Converter={StaticResource BoolToVisibility}}">
+            <views:ConfigurationView/>
+        </Grid>
+        
         
     </Grid>
 </Window>

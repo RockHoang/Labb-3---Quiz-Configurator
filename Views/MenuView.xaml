@@ -19,9 +19,9 @@
             </MenuItem>
 
             <MenuItem Header="View">
-                <MenuItem Header="Play"/>
-                <MenuItem Header="Edit" />
-                <MenuItem Header="FullScreen" />
+                <MenuItem Header="Play" Command="{Binding SwitchToPlayerViewCommand}"/>
+                <MenuItem Header="Edit" Command="{Binding SwitchToConfigViewCommand}"/>
+                <MenuItem Header="FullScreen" Command="{Binding EnableFullScreenCommand}"/>
             </MenuItem>
 
         </Menu>

@@ -22,5 +22,6 @@ namespace Labb_3___Quiz_Configurator.Views
         {
             InitializeComponent();
         }
+
     }
 }
